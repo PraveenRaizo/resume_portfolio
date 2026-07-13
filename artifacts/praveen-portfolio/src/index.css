@@ -57,48 +57,50 @@
   --elevate-1: rgba(0, 0, 0, 0.03);
   --elevate-2: rgba(0, 0, 0, 0.08);
 
-  /* A technical, blueprint/whitepaper aesthetic. 
-     Background is a stark off-white/grey.
-     Primary is a deep technical navy.
-     Accent is a sharp engineering orange. */
-  --background: 210 20% 98%;
-  --foreground: 220 40% 15%;
-  --border: 220 15% 85%;
+  /* Deep Technical Blueprint Aesthetic
+     A rich, sophisticated dark mode as the default.
+     Background is a deep, saturated navy/slate.
+     Primary is a precise neon cyan.
+     Accent is an engineering amber.
+  */
+  --background: 220 50% 12%; 
+  --foreground: 210 40% 98%;
+  --border: 220 40% 20%;
   
-  --card: 0 0% 100%;
-  --card-foreground: 220 40% 15%;
-  --card-border: 220 15% 90%;
+  --card: 220 45% 15%;
+  --card-foreground: 210 40% 98%;
+  --card-border: 220 40% 22%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 220 40% 15%;
-  --popover-border: 220 15% 90%;
+  --popover: 220 45% 15%;
+  --popover-foreground: 210 40% 98%;
+  --popover-border: 220 40% 22%;
 
-  --primary: 220 80% 20%;
-  --primary-foreground: 0 0% 100%;
+  --primary: 190 90% 55%;
+  --primary-foreground: 220 50% 10%;
 
-  --secondary: 220 20% 90%;
-  --secondary-foreground: 220 40% 20%;
+  --secondary: 220 40% 20%;
+  --secondary-foreground: 190 90% 65%;
 
-  --muted: 220 15% 94%;
-  --muted-foreground: 220 20% 45%;
+  --muted: 220 40% 18%;
+  --muted-foreground: 215 30% 75%;
 
-  --accent: 25 90% 50%;
-  --accent-foreground: 0 0% 100%;
+  --accent: 35 100% 55%;
+  --accent-foreground: 220 50% 10%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 220 15% 85%;
-  --ring: 220 80% 20%;
+  --input: 220 40% 20%;
+  --ring: 190 90% 55%;
 
   --app-font-sans: 'Outfit', sans-serif;
   --app-font-mono: 'Space Mono', monospace;
-  --radius: 0rem; /* Sharp edges for precise technical feel */
+  --radius: 0rem; 
 
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.2);
 
   --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
@@ -108,35 +110,16 @@
 }
 
 .dark {
-  --background: 220 40% 6%;
-  --foreground: 210 20% 90%;
-  --border: 220 20% 15%;
-  
-  --card: 220 40% 8%;
-  --card-foreground: 210 20% 90%;
-  --card-border: 220 20% 20%;
-
-  --popover: 220 40% 8%;
-  --popover-foreground: 210 20% 90%;
-  --popover-border: 220 20% 20%;
-
-  --primary: 210 100% 70%;
-  --primary-foreground: 220 40% 10%;
-
-  --secondary: 220 20% 15%;
-  --secondary-foreground: 210 20% 80%;
-
-  --muted: 220 20% 12%;
-  --muted-foreground: 220 20% 60%;
-
-  --accent: 25 90% 60%;
-  --accent-foreground: 220 40% 10%;
-
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 0 0% 100%;
-
-  --input: 220 20% 15%;
-  --ring: 210 100% 70%;
+  /* Inherits from :root since it's already a dark theme, but we can make it an even deeper black/slate if desired. */
+  --background: 220 50% 8%; 
+  --card: 220 45% 10%;
+  --popover: 220 45% 10%;
+  --border: 220 40% 16%;
+  --card-border: 220 40% 18%;
+  --popover-border: 220 40% 18%;
+  --secondary: 220 40% 15%;
+  --muted: 220 40% 13%;
+  --input: 220 40% 16%;
 }
 
 @layer base {
@@ -145,10 +128,16 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background-image: linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
-                      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    /* Richer, glowing grid */
+    background-image: linear-gradient(to right, hsl(var(--primary) / 0.07) 1px, transparent 1px),
+                      linear-gradient(to bottom, hsl(var(--primary) / 0.07) 1px, transparent 1px);
     background-size: 40px 40px;
     background-position: center top;
+  }
+  
+  ::selection {
+    background-color: hsl(var(--primary) / 0.3);
+    color: hsl(var(--primary));
   }
 }
 
@@ -165,10 +154,11 @@
     linear-gradient(to right, hsl(var(--primary) / 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, hsl(var(--primary) / 0.05) 1px, transparent 1px);
   background-size: 20px 20px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

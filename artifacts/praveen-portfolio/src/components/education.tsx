@@ -38,50 +38,52 @@ const CERTIFICATIONS = [
 
 export const Education = () => {
   return (
-    <section id="education" className="py-20 bg-card/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className="py-20 bg-background relative overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-tr from-primary/5 to-transparent pointer-events-none"></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <FadeIn>
-              <h3 className="text-xl font-mono font-semibold uppercase tracking-widest text-primary flex items-center gap-3">
-                <span className="w-8 h-[2px] bg-accent inline-block"></span>
+              <h3 className="text-xl font-mono font-semibold uppercase tracking-widest text-primary flex items-center gap-3 drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)]">
+                <span className="w-8 h-[2px] bg-accent inline-block shadow-[0_0_8px_hsl(var(--accent)/0.8)]"></span>
                 Qualifications
               </h3>
             </FadeIn>
           </div>
           
           <div className="lg:col-span-8">
-            <FadeIn className="mb-12">
-              <h4 className="text-lg font-mono text-muted-foreground mb-6 uppercase tracking-wider border-b border-border pb-2 inline-block">Education</h4>
-              <div className="bg-background border border-border p-6 flex flex-col md:flex-row justify-between md:items-center">
+            <FadeIn className="mb-14">
+              <h4 className="text-lg font-mono text-primary mb-6 uppercase tracking-wider border-b border-primary/20 pb-2 inline-block drop-shadow-[0_0_5px_hsl(var(--primary)/0.3)]">Education</h4>
+              <div className="bg-card/40 backdrop-blur-sm border border-primary/20 p-6 flex flex-col md:flex-row justify-between md:items-center hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_20px_hsl(var(--primary)/0.1)] group">
                 <div>
-                  <h5 className="font-semibold text-lg text-foreground">Bachelor of Engineering (B.E.), Computer Science</h5>
-                  <p className="text-primary font-mono text-sm mt-1">Panimalar Engineering College | Chennai, Tamil Nadu, India</p>
+                  <h5 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors duration-300">Bachelor of Engineering (B.E.), Computer Science</h5>
+                  <p className="text-muted-foreground font-mono text-sm mt-1">Panimalar Engineering College | Chennai, Tamil Nadu, India</p>
                 </div>
-                <div className="mt-4 md:mt-0 px-3 py-1 bg-secondary text-secondary-foreground font-mono text-sm border border-border inline-block self-start">
+                <div className="mt-4 md:mt-0 px-4 py-1.5 bg-primary/10 text-primary font-mono text-sm border border-primary/30 inline-block self-start shadow-[0_0_10px_hsl(var(--primary)/0.05)] group-hover:border-primary/60 transition-colors duration-300">
                   2016 – 2020
                 </div>
               </div>
             </FadeIn>
 
             <FadeIn>
-              <h4 className="text-lg font-mono text-muted-foreground mb-6 uppercase tracking-wider border-b border-border pb-2 inline-block">Certifications</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <h4 className="text-lg font-mono text-primary mb-6 uppercase tracking-wider border-b border-primary/20 pb-2 inline-block drop-shadow-[0_0_5px_hsl(var(--primary)/0.3)]">Certifications</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {CERTIFICATIONS.map((cert, idx) => (
                   <a 
                     key={idx} 
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block bg-background border border-border p-5 hover:border-primary/50 hover:bg-muted/30 transition-all duration-300 group"
+                    className="block bg-card/40 backdrop-blur-sm border border-primary/20 p-5 hover:border-primary/60 hover:bg-primary/5 transition-all duration-500 group hover:shadow-[0_0_20px_hsl(var(--primary)/0.15)] relative overflow-hidden"
                   >
-                    <div className="flex justify-between items-start">
+                    <div className="absolute right-0 top-0 w-16 h-16 bg-gradient-to-bl from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    <div className="flex justify-between items-start relative z-10">
                       <div>
-                        <h5 className="font-semibold text-foreground group-hover:text-primary transition-colors">{cert.title}</h5>
-                        <p className="text-sm font-mono text-muted-foreground mt-1">{cert.issuer}</p>
-                        {cert.detail && <p className="text-xs font-mono text-muted-foreground/70 mt-1">{cert.detail}</p>}
+                        <h5 className="font-bold text-foreground group-hover:text-primary transition-colors duration-300">{cert.title}</h5>
+                        <p className="text-sm font-mono text-muted-foreground mt-1.5">{cert.issuer}</p>
+                        {cert.detail && <p className="text-xs font-mono text-primary/60 mt-1">{cert.detail}</p>}
                       </div>
-                      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors" />
+                      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-accent group-hover:drop-shadow-[0_0_5px_hsl(var(--accent)/0.5)] transition-all duration-300 shrink-0 ml-4" />
                     </div>
                   </a>
                 ))}

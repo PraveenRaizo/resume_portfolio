@@ -68,45 +68,45 @@ const EXPERIENCE = [
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20 border-b border-border bg-card/50">
+    <section id="experience" className="py-20 border-b border-primary/20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <FadeIn>
-              <h3 className="text-xl font-mono font-semibold uppercase tracking-widest text-primary flex items-center gap-3 sticky top-24">
-                <span className="w-8 h-[2px] bg-accent inline-block"></span>
+              <h3 className="text-xl font-mono font-semibold uppercase tracking-widest text-primary flex items-center gap-3 drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)] sticky top-24">
+                <span className="w-8 h-[2px] bg-accent inline-block shadow-[0_0_8px_hsl(var(--accent)/0.8)]"></span>
                 Experience Log
               </h3>
             </FadeIn>
           </div>
           
           <div className="lg:col-span-8">
-            <div className="relative border-l border-border/80 ml-4 md:ml-0 pb-8">
+            <div className="relative border-l border-primary/30 ml-4 md:ml-0 pb-8">
               {EXPERIENCE.map((exp, idx) => (
-                <FadeIn key={idx} delay={idx * 0.1} className="mb-12 relative pl-8 md:pl-10 last:mb-0">
+                <FadeIn key={idx} delay={idx * 0.1} className="mb-14 relative pl-8 md:pl-10 last:mb-0 group">
                   {/* Timeline node */}
-                  <div className="absolute left-0 top-1.5 w-3 h-3 rounded-none border border-primary bg-background -translate-x-[6.5px]">
-                    <div className={`w-full h-full ${idx < 2 ? 'bg-accent' : 'bg-transparent'}`}></div>
+                  <div className="absolute left-0 top-1.5 w-3 h-3 rounded-none border border-primary bg-background -translate-x-[6.5px] group-hover:scale-125 group-hover:border-accent transition-all duration-300 group-hover:shadow-[0_0_10px_hsl(var(--accent)/0.8)]">
+                    <div className={`w-full h-full transition-colors duration-300 ${idx < 2 ? 'bg-accent' : 'bg-transparent group-hover:bg-accent/50'}`}></div>
                   </div>
                   
                   {/* Connection line horizontal */}
-                  <div className="absolute left-0 top-[11px] w-6 border-t border-border border-dashed -translate-x-0"></div>
+                  <div className="absolute left-0 top-[11px] w-6 border-t border-primary/30 border-dashed -translate-x-0 group-hover:border-accent/50 transition-colors duration-300"></div>
                   
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-4 gap-2">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-5 gap-3">
                     <div>
-                      <h4 className="text-xl font-semibold text-foreground">{exp.title}</h4>
-                      <div className="text-primary font-mono text-sm mt-1">
-                        {exp.company} <span className="text-muted-foreground mx-2">|</span> {exp.location}
+                      <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">{exp.title}</h4>
+                      <div className="text-accent font-mono text-sm mt-1 drop-shadow-[0_0_3px_hsl(var(--accent)/0.3)]">
+                        {exp.company} <span className="text-muted-foreground mx-2">|</span> <span className="text-muted-foreground">{exp.location}</span>
                       </div>
                     </div>
-                    <div className="inline-flex items-center px-2.5 py-0.5 bg-secondary text-secondary-foreground font-mono text-xs border border-border/50 self-start">
+                    <div className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary font-mono text-xs border border-primary/30 self-start shadow-[0_0_10px_hsl(var(--primary)/0.05)] group-hover:border-primary/60 transition-colors duration-300">
                       {exp.period}
                     </div>
                   </div>
                   
                   <ul className="space-y-3 mt-4 text-foreground/80 text-[0.95rem]">
                     {exp.achievements.map((achievement, aIdx) => (
-                      <li key={aIdx} className="relative pl-5 before:content-['>'] before:absolute before:left-0 before:text-accent/60 before:font-mono">
+                      <li key={aIdx} className="relative pl-6 before:content-['>'] before:absolute before:left-0 before:text-primary before:font-mono before:drop-shadow-[0_0_5px_hsl(var(--primary)/0.5)]">
                         {achievement}
                       </li>
                     ))}

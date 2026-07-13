@@ -34,13 +34,13 @@ const SKILL_CATEGORIES = [
 
 export const Skills = () => {
   return (
-    <section id="skills" className="py-20 border-b border-border">
+    <section id="skills" className="py-20 border-b border-primary/20 bg-background/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <FadeIn>
-              <h3 className="text-xl font-mono font-semibold uppercase tracking-widest text-primary flex items-center gap-3">
-                <span className="w-8 h-[2px] bg-accent inline-block"></span>
+              <h3 className="text-xl font-mono font-semibold uppercase tracking-widest text-primary flex items-center gap-3 drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)] sticky top-24">
+                <span className="w-8 h-[2px] bg-accent inline-block shadow-[0_0_8px_hsl(var(--accent)/0.8)]"></span>
                 Technical Stack
               </h3>
             </FadeIn>
@@ -50,19 +50,19 @@ export const Skills = () => {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {SKILL_CATEGORIES.map((category, idx) => (
                 <StaggerItem key={idx}>
-                  <div className="h-full border border-border bg-card p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-md relative group overflow-hidden">
-                    <div className="absolute top-0 right-0 w-8 h-8 bg-muted border-b border-l border-border transform translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center">
-                      <div className="w-1 h-1 bg-accent rounded-full"></div>
+                  <div className="h-full border border-primary/20 bg-card/60 backdrop-blur-sm p-6 transition-all duration-500 hover:border-primary/60 hover:shadow-[0_0_25px_hsl(var(--primary)/0.15)] relative group overflow-hidden">
+                    <div className="absolute top-0 right-0 w-8 h-8 bg-primary/10 border-b border-l border-primary/30 transform translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_5px_hsl(var(--accent)/1)]"></div>
                     </div>
                     
-                    <h4 className="font-mono text-primary mb-4 font-semibold text-sm border-b border-border pb-2 inline-block">
+                    <h4 className="font-mono text-primary mb-5 font-semibold text-sm border-b border-primary/20 pb-2 inline-block drop-shadow-[0_0_5px_hsl(var(--primary)/0.3)]">
                       {category.title}
                     </h4>
-                    <ul className="flex flex-wrap gap-2">
+                    <ul className="flex flex-wrap gap-2.5">
                       {category.skills.map((skill, sIdx) => (
                         <li 
                           key={sIdx}
-                          className="text-sm px-2 py-1 bg-secondary text-secondary-foreground font-mono"
+                          className="text-xs px-2.5 py-1.5 bg-secondary/80 text-secondary-foreground font-mono border border-border group-hover:border-primary/30 transition-colors duration-300"
                         >
                           {skill}
                         </li>
