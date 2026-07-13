@@ -3,7 +3,7 @@ import { logger } from "./lib/logger.js";
 
 const port = Number(process.env["PORT"]) || 5000;
 
-app.listen(port, (err) => {
+app.listen(port, (err?: Error) => {
   if (err) {
     logger.error({ err }, "Error listening on port");
     process.exit(1);
