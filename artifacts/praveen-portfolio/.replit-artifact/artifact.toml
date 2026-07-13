@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Praveen M — Portfolio"
+version = "1.0.0"
+id = "artifacts/praveen-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22956
+
+[services.development]
+run = "pnpm --filter @workspace/praveen-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/praveen-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/praveen-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22956"
+BASE_PATH = "/"
