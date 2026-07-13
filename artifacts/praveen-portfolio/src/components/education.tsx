@@ -11,7 +11,7 @@ const CERTIFICATIONS = [
   {
     title: 'Microsoft SQL Certification Training',
     issuer: 'Intellipaat',
-    link: 'https://lms.intellipaat.com',
+    link: 'https://lms.intellipaat.com/certificate-link/?Yz0yODUzJnU9MzE5MjM1JmV4dD0x',
     detail: 'ID: cus-9307701'
   },
   {

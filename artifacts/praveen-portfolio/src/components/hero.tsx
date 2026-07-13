@@ -41,7 +41,7 @@ export const Hero = () => {
               praveenlee1707@gmail.com
             </a>
             
-            <a href="https://linkedin.com/in/praveenm-885017168" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-transparent hover:bg-muted text-foreground px-6 py-3 font-mono text-sm font-medium transition-colors border border-border">
+            <a href="https://www.linkedin.com/in/praveen-m-885017168/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-transparent hover:bg-muted text-foreground px-6 py-3 font-mono text-sm font-medium transition-colors border border-border">
               <Linkedin className="w-4 h-4" />
               LinkedIn
             </a>
